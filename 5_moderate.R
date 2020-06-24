@@ -1,7 +1,5 @@
 # moderation effect
 
-pacman::p_load("sjplot", "sjmisc", "ggplot2")
-
 for( i in c("sjplot", "sjmisc", "ggplot2")){
   library(i, character.only = TRUE)
 }
