@@ -1,6 +1,6 @@
 # mediation effect analysis by Hayes
 
-data <- read.csv("data.csv")
+data <- read.csv("data/data.csv")
 
 library(mediation)
 
