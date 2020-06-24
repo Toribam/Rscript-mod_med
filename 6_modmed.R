@@ -41,5 +41,3 @@ summary(hi_out.fit)
 plot(hi_out.fit)
 
 rm(list=ls())
-
-
