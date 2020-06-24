@@ -5,8 +5,6 @@ for( i in c("sjplot", "sjmisc", "ggplot2")){
 }
 
 
-theme_set(theme_sjplot())
-
 data <- read.csv("data/data.csv")
 
 attach(data)
