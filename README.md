@@ -15,3 +15,6 @@ moderated mediation effect with control variables
 5. Moderation effect by Aiken & West(1991)
 
 6. Moderated mediation effect by Preacher & Hayes(2008)
+
+
+[![HitCount](http://hits.dwyl.com/Toribam/Rscript-mod_med.svg)](http://hits.dwyl.com/Toribam/Rscript-mod_med)
