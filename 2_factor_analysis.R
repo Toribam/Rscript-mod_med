@@ -1,10 +1,18 @@
 # job crafting with lavaan package
 # except JC6, JC7 because path was not acceptable
 
-# install.packages(c("haven", "dplyr", "corrplot", "PerformanceAnalytics"), dependencies = TRUE)
+if(!require('lavaan')){
+  install.packages('lavaan', repos = 'https://cran.asia')
+}
 
-for( i in c("lavaan", "semPlot", "semTools", "haven")){
-  library(i, character.only = TRUE)
+if(!require('semPlot')){
+  install.packages('semPlot', repos = 'https://cran.asia')
+}
+if(!require('semTools')){
+  install.packages('semTools', repos = 'https://cran.asia')
+}
+if(!require('haven')){
+  install.packages('haven', repos = 'https://cran.asia')
 }
 
 data <- read.csv("data/data.csv")
@@ -23,14 +31,14 @@ cha =~ JC17 + JC18 + JC19 + JC20 + JC21
 hind =~ JC8 + JC9 + JC10 + JC11
 '
 
-one_model_fit <- cfa(one_factor_model, data = jc)
-summary(one_model_fit, standardized = TRUE)
+one_model_fit <- lavaan::cfa(one_factor_model, data = jc, std.lv = T) # 특정 조건 (Intel Math Kernel Library)에서 vcov가 음수가 나옵니다.
+lavaan::summary(one_model_fit, standardized = TRUE, fit.measures = T)
 
 semPlot::semPaths(one_model_fit,
                   "std",
                   edge.label.cex = 1.2,
                   rotation = 4,
-                  )
+                  )  # plot을 svg로 저장해 제시하면 좋습니다.
 
 
 two_factor_model <- '
@@ -48,14 +56,14 @@ hind =~ JC8 + JC9 + JC10 + JC11
 '
 
 # test
-two_model_fit <- cfa(two_factor_model, data = jc)
+two_model_fit <- lavaan::cfa(two_factor_model, data = jc) # 오류: hind 단일만 nega_jc가 될 수 없음, cha는 분산이 음분산이 나타나 추정 불능
 
-summary(two_model_fit, standardized = TRUE)
+lavaan::summary(two_model_fit, standardized = TRUE)
 
 semPlot::semPaths(two_model_fit,
                   "std",
                   nCharNodes = 7,
                   edge.label.cex = 1,
                   rotation = 4,
-                  )
+                  )  # plot을 svg로 저장해 제시하면 좋습니다.
 
