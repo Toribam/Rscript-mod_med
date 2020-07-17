@@ -1,6 +1,8 @@
 # moderation effect
   
   data <- read.csv("data/data.csv")
+  
+  pacman::p_load(interactions, sjPlot, sjmisc)
 
 # Moderation effect of conscientiousness between challenge stressor and work engagement
 
@@ -19,7 +21,13 @@
     sjPlot::plot_model(ch_mod3, type = "pred", terms = c("ch_str", "C"))
     
     # simple slope test with plot
+      svg(filename = "figure/4_plot_ch_mod.svg",
+          width = 8,
+          height = 6,
+          pointsize = 12)
       interactions::probe_interaction(ch_mod3, pred = 'ch_str', modx = "C")
+      dev.off()
+      
       # JOHNSON-NEYMAN INTERVAL 
       # 
       # When C is OUTSIDE the interval [0.67, 3.77], the slope of ch_str is p < .05.
@@ -58,14 +66,19 @@
     hi_mod2 <- update(hi_mod1, .~. + hi_str + N, data = data)
     summary(hi_mod2)
     
-    hi_mod3 <- update(hi_mod2, .~. + hi_str:C, data = data)
+    hi_mod3 <- update(hi_mod2, .~. + hi_str:N, data = data)
     summary(hi_mod3)
     
-    sjPlot::plot_model(hi_mod3, type = "pred", terms = c("hi_str", "N")) # 상호작용항은 C와 만들었는데 왜 N과 상호작용을 계산하지요?
+    sjPlot::plot_model(hi_mod3, type = "pred", terms = c("hi_str", "N"))
     
     # simple slope test with plot
-    interactions::probe_interaction(hi_mod3, pred = 'hi_str', modx = "N") # C와 상호작용을 만들었으므로 N과 상호작용 효과 계산 불능
-    interactions::probe_interaction(hi_mod3, pred = 'hi_str', modx = "C") # C와 상호작용을 만들었으므로 C를 조절변수로 지정해야 계산 가능
+    
+    svg(filename = "figure/4_plot_hi_mod.svg",
+        width = 8,
+        height = 6,
+        pointsize = 12)
+    interactions::probe_interaction(hi_mod3, pred = 'hi_str', modx = "N")
+    dev.off()
     
     # JOHNSON-NEYMAN INTERVAL 
     # 
