@@ -20,7 +20,12 @@
                                      robustSE = TRUE,
                                      sims = 5000) # 논문에 Robust SE 사용을 밝히는 게 유리합니다.
     summary(ch_med.out)
-    plot(ch_med.out) # plot을 svg로 저장해 제시하면 좋습니다.
+    svg(filename = "figure/3_plot_ch_med.svg",
+        width = 8,
+        height = 6,
+        pointsize = 12)
+    plot(ch_med.out)
+    dev.off()
   
   # remove objects where starts with ch
     rm(list=ls()[grepl("^ch", ls())])
@@ -42,9 +47,14 @@
                                      treat = "hi_str",
                                      mediator = "WE",
                                      robustSE = TRUE,
-                                     sims = 5000) # 논문에 Robust SE 사용을 밝히는 게 유리합니다.
+                                     sims = 5000)
     summary(hi_med.out)
-    plot(hi_med.out) # plot을 svg로 저장해 제시하면 좋습니다.
+    svg(filename = "figure/3_plot_hi_med.svg",
+        width = 8,
+        height = 6,
+        pointsize = 12)
+    plot(hi_med.out)
+    dev.off()
     
     # remove objects where starts with hi
       rm(list=ls()[grepl("^hi", ls())])
