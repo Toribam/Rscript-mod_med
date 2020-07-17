@@ -1,9 +1,6 @@
 # run.R
-  if(length(list.files('data/', 'sav$'))>0){
-    source('1_refine_data.R')
-  }
-  source('2_factor_analysis.R')
-  source('3_all.R')
-  source('4_mediate.R')
-  source('5_moderate.R')
-  source('6_modmed.R')
+
+  source('2_all.R', echo = TRUE)
+  source('3_mediate.R', echo = TRUE)
+  source('4_moderate.R', echo = TRUE)
+  source('5_modmed.R', echo = TRUE)
