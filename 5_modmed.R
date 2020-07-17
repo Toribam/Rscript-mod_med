@@ -13,9 +13,16 @@
                                     treat = "ch_str",
                                     mediator = "WE",
                                     robustSE = TRUE,
-                                    sims = 5000) # 논문에 Robust SE 사용을 밝히는 게 유리합니다.
+                                    sims = 5000)
   summary(ch_med.out)
-  plot(ch_med.out) # plot을 svg로 저장해 제시하면 좋습니다.
+  
+  svg(filename = "figure/5_plot_ch_modmed.svg",
+      width = 8,
+      height = 6,
+      pointsize = 12,
+      )
+  plot(ch_med.out)
+  dev.off()
 
 # hi modmed
   hi_med.fit <- lm(WE ~ sex + age + edu +tenure + hi_str + N + hi_str:N, data = data)
@@ -24,14 +31,22 @@
   hi_out.fit <- glm(nega_jc ~ sex + age + edu + tenure + hi_str + WE, data = data)
   summary(hi_out.fit)
   
-  hi_out.fit <- mediation::mediate(hi_med.fit,
+  hi_med.out <- mediation::mediate(hi_med.fit,
                                    hi_out.fit,
                                    treat = "hi_str",
                                    mediator = "WE",
                                    robustSE = TRUE,
-                                   sims = 5000) # 논문에 Robust SE 사용을 밝히는 게 유리합니다.
-  summary(hi_out.fit)
-  plot(hi_out.fit) # plot을 svg로 저장해 제시하면 좋습니다.
+                                   sims = 5000)
+  summary(hi_med.out)
+  
+  svg(filename = "figure/5_plot_hi_modmed.svg",
+      width = 8,
+      height = 6,
+      pointsize = 12,
+  )
+  plot(hi_med.out)
+  dev.off()
+  
   
   # remove all objects
   rm(list=ls())
