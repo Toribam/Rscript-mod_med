@@ -1,18 +1,19 @@
+## raw data contains personally identifiable informations ##
+
+## this script cannot run because raw data was removed ##
+
+
 # refining data
 
-# install.packages(c("haven", "dplyr", "corrplot", "PerformanceAnalytics"), dependencies = TRUE)
+install.packages("pacman")
 
+library(pacman)
 
-
-for(i in c("haven", "dplyr", "corrplot", "PerformanceAnalytics", "corrplot")){
-  library(i, character.only = TRUE)
-}
+pacman::p_load(haven, dplyr, corrplot, PerformanceAnalytics)
 
 setwd(getwd())
 
 df <- read_spss("data/motor.sav")
-
-attach(df)
 
 ID <- df$ID
 
