@@ -18,7 +18,7 @@
                                      treat = "ch_str",
                                      mediator = "WE",
                                      robustSE = TRUE,
-                                     sims = 5000) # 논문에 Robust SE 사용을 밝히는 게 유리합니다.
+                                     sims = 5000)
     summary(ch_med.out)
     svg(filename = "figure/3_plot_ch_med.svg",
         width = 8,
