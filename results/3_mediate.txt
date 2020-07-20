@@ -1,0 +1,140 @@
+
+Call:
+lm(formula = WE ~ ch_str + sex + age + edu + tenure, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.5645 -0.4215  0.0517  0.4057  1.3956 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  1.891044   0.518767   3.645  0.00035 ***
+ch_str       0.327668   0.077768   4.213 3.99e-05 ***
+sex          0.100708   0.187302   0.538  0.59147    
+age          0.020828   0.009489   2.195  0.02947 *  
+edu          0.016858   0.055202   0.305  0.76043    
+tenure      -0.002338   0.001265  -1.848  0.06624 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.5976 on 178 degrees of freedom
+Multiple R-squared:  0.1051,	Adjusted R-squared:  0.07992 
+F-statistic: 4.179 on 5 and 178 DF,  p-value: 0.001293
+
+
+Call:
+glm(formula = posi_jc ~ WE + ch_str + sex + age + edu + tenure, 
+    family = gaussian(link = identity), data = data)
+
+Deviance Residuals: 
+     Min        1Q    Median        3Q       Max  
+-0.89469  -0.26300   0.01647   0.24956   0.85729  
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  1.6071281  0.3292405   4.881 2.34e-06 ***
+WE           0.4292572  0.0458878   9.355  < 2e-16 ***
+ch_str       0.2302422  0.0499290   4.611 7.64e-06 ***
+sex          0.0873250  0.1147629   0.761    0.448    
+age         -0.0087657  0.0058877  -1.489    0.138    
+edu         -0.0043992  0.0338044  -0.130    0.897    
+tenure      -0.0002707  0.0007820  -0.346    0.730    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for gaussian family taken to be 0.1338548)
+
+    Null deviance: 44.059  on 183  degrees of freedom
+Residual deviance: 23.692  on 177  degrees of freedom
+AIC: 161.01
+
+Number of Fisher Scoring iterations: 2
+
+
+Causal Mediation Analysis 
+
+Quasi-Bayesian Confidence Intervals
+
+               Estimate 95% CI Lower 95% CI Upper p-value    
+ACME             0.1400       0.0593         0.23  <2e-16 ***
+ADE              0.2313       0.1114         0.35   4e-04 ***
+Total Effect     0.3714       0.2388         0.50  <2e-16 ***
+Prop. Mediated   0.3736       0.1842         0.62  <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Sample Size Used: 184 
+
+
+Simulations: 5000 
+
+
+Call:
+lm(formula = WE ~ hi_str + sex + age + edu + tenure, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.7399 -0.3582  0.0150  0.4075  1.5069 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  4.5621616  0.4186720  10.897  < 2e-16 ***
+hi_str      -0.4289904  0.0605520  -7.085 3.13e-11 ***
+sex          0.0189228  0.1740261   0.109    0.914    
+age          0.0124710  0.0087251   1.429    0.155    
+edu         -0.0059233  0.0510993  -0.116    0.908    
+tenure      -0.0008449  0.0011571  -0.730    0.466    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.5535 on 178 degrees of freedom
+Multiple R-squared:  0.2323,	Adjusted R-squared:  0.2107 
+F-statistic: 10.77 on 5 and 178 DF,  p-value: 4.626e-09
+
+
+Call:
+glm(formula = nega_jc ~ WE + hi_str + sex + age + edu + tenure, 
+    family = gaussian(link = identity), data = data)
+
+Deviance Residuals: 
+     Min        1Q    Median        3Q       Max  
+-1.80324  -0.42336  -0.03659   0.35787   1.66415  
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  1.0006897  0.6670105   1.500   0.1353    
+WE           0.2401695  0.0924850   2.597   0.0102 *  
+hi_str       0.4407018  0.0845962   5.209 5.23e-07 ***
+sex         -0.1054958  0.2147387  -0.491   0.6238    
+age          0.0008143  0.0108275   0.075   0.9401    
+edu          0.0608465  0.0630541   0.965   0.3359    
+tenure       0.0002272  0.0014299   0.159   0.8739    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for gaussian family taken to be 0.4664335)
+
+    Null deviance: 95.992  on 183  degrees of freedom
+Residual deviance: 82.559  on 177  degrees of freedom
+AIC: 390.71
+
+Number of Fisher Scoring iterations: 2
+
+
+Causal Mediation Analysis 
+
+Quasi-Bayesian Confidence Intervals
+
+               Estimate 95% CI Lower 95% CI Upper p-value    
+ACME             -0.103       -0.209        -0.01   0.028 *  
+ADE               0.440        0.253         0.62  <2e-16 ***
+Total Effect      0.338        0.180         0.49  <2e-16 ***
+Prop. Mediated   -0.296       -0.799        -0.03   0.028 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Sample Size Used: 184 
+
+
+Simulations: 5000 
+
