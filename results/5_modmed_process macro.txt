@@ -1,0 +1,276 @@
+# Ch_modmed
+
+Run MATRIX procedure:
+
+***************** PROCESS Procedure for SPSS Version 3.5 *****************
+
+          Written by Andrew F. Hayes, Ph.D.       www.afhayes.com
+    Documentation available in Hayes (2018). www.guilford.com/p/hayes3
+
+**************************************************************************
+Model  : 7
+    Y  : posi_jc
+    X  : ch_str
+    M  : WE
+    W  : C
+
+Covariates:
+ sex      age      edu      tenure
+
+Sample
+Size:  184
+
+**************************************************************************
+OUTCOME VARIABLE:
+ WE
+
+Model Summary
+          R       R-sq        MSE          F        df1        df2          p
+       .545       .297       .284     10.642      7.000    176.000       .000
+
+Model
+              coeff         se          t          p       LLCI       ULCI
+constant      4.759      1.780      2.674       .008      -.301      9.819
+ch_str        -.960       .465     -2.065       .040     -2.282       .362
+C             -.575       .451     -1.276       .204     -1.857       .706
+Int_1          .294       .118      2.484       .014      -.042       .630
+sex            .033       .167       .197       .844      -.443       .509
+age            .018       .008      2.068       .040      -.007       .042
+edu            .035       .049       .699       .485      -.106       .175
+tenure        -.002       .001     -1.368       .173      -.005       .002
+
+Product terms key:
+ Int_1    :        ch_str   x        C
+
+Test(s) of highest order unconditional interaction(s):
+       R2-chng          F        df1        df2          p
+X*W       .025      6.169      1.000    176.000       .014
+----------
+    Focal predict: ch_str   (X)
+          Mod var: C        (W)
+
+Conditional effects of the focal predictor at values of the moderator(s):
+
+          C     Effect         se          t          p       LLCI       ULCI
+      3.333       .019       .098       .196       .845      -.258       .297
+      3.833       .166       .073      2.269       .025      -.042       .374
+      4.500       .362       .103      3.505       .001       .068       .655
+
+Moderator value(s) defining Johnson-Neyman significance region(s):
+      Value    % below    % above
+      3.984     54.891     45.109
+
+Conditional effect of focal predictor at values of the moderator:
+          C     Effect         se          t          p       LLCI       ULCI
+      2.500      -.226       .179     -1.261       .209      -.735       .283
+      2.625      -.189       .166     -1.141       .255      -.660       .282
+      2.750      -.152       .152      -.998       .319      -.586       .281
+      2.875      -.116       .140      -.827       .409      -.513       .282
+      3.000      -.079       .127      -.619       .537      -.441       .283
+      3.125      -.042       .116      -.364       .716      -.370       .286
+      3.250      -.005       .104      -.052       .959      -.302       .292
+      3.375       .031       .094       .332       .740      -.237       .300
+      3.500       .068       .086       .793       .429      -.176       .312
+      3.625       .105       .079      1.326       .187      -.120       .329
+      3.750       .141       .075      1.897       .059      -.071       .354
+      3.875       .178       .073      2.443       .016      -.029       .386
+      3.984       .210       .074      2.843       .005       .000       .420
+      4.000       .215       .074      2.895       .004       .004       .426
+      4.125       .252       .078      3.211       .002       .029       .474
+      4.250       .288       .085      3.396       .001       .047       .530
+      4.375       .325       .093      3.482       .001       .060       .590
+      4.500       .362       .103      3.505       .001       .068       .655
+      4.625       .399       .114      3.491       .001       .074       .723
+      4.750       .435       .126      3.457       .001       .077       .793
+      4.875       .472       .138      3.415       .001       .079       .865
+      5.000       .509       .151      3.369       .001       .079       .938
+
+**************************************************************************
+OUTCOME VARIABLE:
+ posi_jc
+
+Model Summary
+          R       R-sq        MSE          F        df1        df2          p
+       .680       .462       .134     25.359      6.000    177.000       .000
+
+Model
+              coeff         se          t          p       LLCI       ULCI
+constant      1.607       .329      4.881       .000       .671      2.543
+ch_str         .230       .050      4.611       .000       .088       .372
+WE             .429       .046      9.355       .000       .299       .560
+sex            .087       .115       .761       .448      -.239       .414
+age           -.009       .006     -1.489       .138      -.026       .008
+edu           -.004       .034      -.130       .897      -.100       .092
+tenure         .000       .001      -.346       .730      -.002       .002
+
+****************** DIRECT AND INDIRECT EFFECTS OF X ON Y *****************
+
+Direct effect of X on Y
+     Effect         se          t          p       LLCI       ULCI
+       .230       .050      4.611       .000       .088       .372
+
+Conditional indirect effects of X on Y:
+
+INDIRECT EFFECT:
+ ch_str      ->    WE          ->    posi_jc
+
+          C     Effect     BootSE   BootLLCI   BootULCI
+      3.333       .008       .051      -.116       .185
+      3.833       .071       .037      -.022       .187
+      4.500       .155       .053       .018       .314
+
+      Index of moderated mediation:
+       Index     BootSE   BootLLCI   BootULCI
+C       .126       .064      -.068       .299
+---
+
+*********************** ANALYSIS NOTES AND ERRORS ************************
+
+Level of confidence for all confidence intervals in output:
+  99.5000
+
+Number of bootstrap samples for percentile bootstrap confidence intervals:
+  5000
+
+W values in conditional tables are the 16th, 50th, and 84th percentiles.
+
+------ END MATRIX -----
+
+
+# hi_modmed
+
+Run MATRIX procedure:
+
+***************** PROCESS Procedure for SPSS Version 3.5 *****************
+
+          Written by Andrew F. Hayes, Ph.D.       www.afhayes.com
+    Documentation available in Hayes (2018). www.guilford.com/p/hayes3
+
+**************************************************************************
+Model  : 7
+    Y  : nega_jc
+    X  : hi_str
+    M  : WE
+    W  : N
+
+Covariates:
+ sex      age      edu      tenure
+
+Sample
+Size:  184
+
+**************************************************************************
+OUTCOME VARIABLE:
+ WE
+
+Model Summary
+          R       R-sq        MSE          F        df1        df2          p
+       .512       .262       .298      8.926      7.000    176.000       .000
+
+Model
+              coeff         se          t          p       LLCI       ULCI
+constant      6.188       .796      7.771       .000      3.924      8.451
+hi_str        -.971       .284     -3.416       .001     -1.779      -.163
+N             -.630       .255     -2.469       .014     -1.356       .095
+Int_1          .205       .098      2.086       .038      -.074       .484
+sex            .034       .173       .197       .844      -.457       .525
+age            .012       .009      1.397       .164      -.012       .037
+edu            .006       .051       .125       .901      -.138       .151
+tenure        -.001       .001      -.704       .482      -.004       .002
+
+Product terms key:
+ Int_1    :        hi_str   x        N
+
+Test(s) of highest order unconditional interaction(s):
+       R2-chng          F        df1        df2          p
+X*W       .018      4.350      1.000    176.000       .038
+----------
+    Focal predict: hi_str   (X)
+          Mod var: N        (W)
+
+Conditional effects of the focal predictor at values of the moderator(s):
+
+          N     Effect         se          t          p       LLCI       ULCI
+      2.167      -.527       .090     -5.833       .000      -.785      -.270
+      2.833      -.391       .064     -6.155       .000      -.572      -.210
+      3.333      -.289       .081     -3.567       .000      -.519      -.059
+
+Moderator value(s) defining Johnson-Neyman significance region(s):
+      Value    % below    % above
+      3.483     85.870     14.130
+
+Conditional effect of focal predictor at values of the moderator:
+          N     Effect         se          t          p       LLCI       ULCI
+      1.333      -.698       .159     -4.380       .000     -1.151      -.245
+      1.492      -.666       .145     -4.583       .000     -1.078      -.253
+      1.650      -.633       .131     -4.817       .000     -1.007      -.260
+      1.808      -.601       .118     -5.088       .000      -.936      -.265
+      1.967      -.568       .105     -5.397       .000      -.868      -.269
+      2.125      -.536       .093     -5.740       .000      -.801      -.270
+      2.283      -.504       .083     -6.091       .000      -.739      -.269
+      2.442      -.471       .074     -6.393       .000      -.681      -.262
+      2.600      -.439       .067     -6.533       .000      -.630      -.248
+      2.758      -.406       .064     -6.367       .000      -.588      -.225
+      2.917      -.374       .064     -5.826       .000      -.556      -.191
+      3.075      -.342       .068     -5.010       .000      -.535      -.148
+      3.233      -.309       .075     -4.109       .000      -.523      -.095
+      3.392      -.277       .085     -3.272       .001      -.517      -.036
+      3.483      -.258       .091     -2.843       .005      -.516       .000
+      3.550      -.244       .096     -2.556       .011      -.516       .027
+      3.708      -.212       .108     -1.968       .051      -.518       .094
+      3.867      -.179       .121     -1.489       .138      -.522       .163
+      4.025      -.147       .134     -1.097       .274      -.528       .234
+      4.183      -.115       .148      -.775       .439      -.535       .306
+      4.342      -.082       .162      -.507       .612      -.543       .378
+      4.500      -.050       .176      -.282       .778      -.551       .452
+
+**************************************************************************
+OUTCOME VARIABLE:
+ nega_jc
+
+Model Summary
+          R       R-sq        MSE          F        df1        df2          p
+       .374       .140       .466      4.800      6.000    177.000       .000
+
+Model
+              coeff         se          t          p       LLCI       ULCI
+constant      1.001       .667      1.500       .135      -.895      2.897
+hi_str         .441       .085      5.209       .000       .200       .681
+WE             .240       .092      2.597       .010      -.023       .503
+sex           -.105       .215      -.491       .624      -.716       .505
+age            .001       .011       .075       .940      -.030       .032
+edu            .061       .063       .965       .336      -.118       .240
+tenure         .000       .001       .159       .874      -.004       .004
+
+****************** DIRECT AND INDIRECT EFFECTS OF X ON Y *****************
+
+Direct effect of X on Y
+     Effect         se          t          p       LLCI       ULCI
+       .441       .085      5.209       .000       .200       .681
+
+Conditional indirect effects of X on Y:
+
+INDIRECT EFFECT:
+ hi_str      ->    WE          ->    nega_jc
+
+          N     Effect     BootSE   BootLLCI   BootULCI
+      2.167      -.127       .059      -.316       .024
+      2.833      -.094       .042      -.222       .019
+      3.333      -.069       .034      -.183       .014
+
+      Index of moderated mediation:
+       Index     BootSE   BootLLCI   BootULCI
+N       .049       .035      -.026       .181
+---
+
+*********************** ANALYSIS NOTES AND ERRORS ************************
+
+Level of confidence for all confidence intervals in output:
+  99.5000
+
+Number of bootstrap samples for percentile bootstrap confidence intervals:
+  5000
+
+W values in conditional tables are the 16th, 50th, and 84th percentiles.
+
+------ END MATRIX -----
